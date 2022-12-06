@@ -1,7 +1,0 @@
-apiVersion: networking.istio.io/v1alpha3
-kind: DestinationRule
-metadata:
-  name: backend
-  namespace: data-plane
-spec:
-  host: backend.data-plane.svc.cluster.local
