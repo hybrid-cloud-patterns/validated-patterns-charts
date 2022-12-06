@@ -33,4 +33,28 @@ entries:
     urls:
     - https://github.com/hybrid-cloud-patterns/validated-patterns-charts/releases/download/servicemesh-0.1.0/servicemesh-0.1.0.tgz
     version: 0.1.0
-generated: "2022-12-06T22:15:23.729461283Z"
+  vault:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2022-12-06T22:16:16.833894872Z"
+    dependencies:
+    - condition: vault.enabled
+      name: vault
+      repository: https://helm.releases.hashicorp.com
+      tags:
+      - vault
+      version: v0.21.0
+    - condition: vault-bootstrap.enabled
+      name: vault-bootstrap
+      repository: ""
+      tags:
+      - vault-bootstrap
+      version: 0.1.5
+    description: Helm chart to deploy Vault to an OpenShift Cluster
+    digest: bfb375624028f38f796ed08331fa76d3b71475809e2564aabb30b268b6e90ee6
+    name: vault
+    type: application
+    urls:
+    - https://github.com/hybrid-cloud-patterns/validated-patterns-charts/releases/download/vault-0.0.13/vault-0.0.13.tgz
+    version: 0.0.13
+generated: "2022-12-06T22:16:16.833906072Z"
