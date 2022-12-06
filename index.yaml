@@ -1,5 +1,16 @@
 apiVersion: v1
 entries:
+  bluegreen:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2022-12-06T22:22:48.074822444Z"
+    description: A Helm chart for Kubernetes
+    digest: 06903f6f7699f754b758f3c4b5f42ec1531ea86583716f75cf716057ee3aa483
+    name: bluegreen
+    type: application
+    urls:
+    - https://github.com/hybrid-cloud-patterns/validated-patterns-charts/releases/download/bluegreen-0.1.0/bluegreen-0.1.0.tgz
+    version: 0.1.0
   istio:
   - apiVersion: v2
     appVersion: 1.16.0
@@ -57,4 +68,4 @@ entries:
     urls:
     - https://github.com/hybrid-cloud-patterns/validated-patterns-charts/releases/download/vault-0.0.13/vault-0.0.13.tgz
     version: 0.0.13
-generated: "2022-12-06T22:16:16.833906072Z"
+generated: "2022-12-06T22:22:48.074828744Z"
