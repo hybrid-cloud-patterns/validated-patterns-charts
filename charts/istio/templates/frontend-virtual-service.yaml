@@ -1,0 +1,16 @@
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: frontend
+  namespace: data-plane
+spec:
+  hosts:
+  - frontend.{{ .Values.istio.virtual_service.cluster_domain }}
+  gateways:
+  - control-plane/frontend-gateway
+  http:
+  - route:
+    - destination:
+        port:
+          number: 8080
+        host: frontend.data-plane.svc.cluster.local

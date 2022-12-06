@@ -1,0 +1,16 @@
+#
+# Values file for the istio helm chart.
+#
+istio:
+  backend:
+    destination:
+      namespace: data-plane
+      host: backend.data-plane.svc.cluster.local
+      traffic_policy:
+        mode: ISTIO_MUTUAL
+  gateway:
+    cluster_domain: apps.clustername.domain.com  # THIS NEEDS TO BE OVERRIDEN or CHANGED TO REFLECT YOUR CLUSTER DOMAIN
+  virtual_service:
+    cluster_domain: apps.clustername.domain.com  # THIS NEEDS TO BE OVERRIDEN or CHANGED TO REFLECT YOUR CLUSTER DOMAIN
+    
+
