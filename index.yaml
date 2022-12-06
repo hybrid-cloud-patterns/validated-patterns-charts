@@ -22,4 +22,15 @@ entries:
     urls:
     - https://github.com/hybrid-cloud-patterns/validated-patterns-charts/releases/download/rollouts-0.1.1/rollouts-0.1.1.tgz
     version: 0.1.1
-generated: "2022-12-06T22:15:04.382423105Z"
+  servicemesh:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2022-12-06T22:15:23.729456383Z"
+    description: A Helm chart for Kubernetes
+    digest: d630416afe37c7a2961a15d97d81b7cec990cf07fefefb9776f3032474975420
+    name: servicemesh
+    type: application
+    urls:
+    - https://github.com/hybrid-cloud-patterns/validated-patterns-charts/releases/download/servicemesh-0.1.0/servicemesh-0.1.0.tgz
+    version: 0.1.0
+generated: "2022-12-06T22:15:23.729461283Z"
