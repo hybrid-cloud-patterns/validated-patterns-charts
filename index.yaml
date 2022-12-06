@@ -47,6 +47,29 @@ entries:
   vault:
   - apiVersion: v2
     appVersion: 1.0.0
+    created: "2022-12-06T23:45:34.762007102Z"
+    dependencies:
+    - condition: vault.enabled
+      name: vault
+      repository: https://helm.releases.hashicorp.com
+      tags:
+      - vault
+      version: v0.21.0
+    - condition: vault-bootstrap.enabled
+      name: vault-bootstrap
+      repository: ""
+      tags:
+      - vault-bootstrap
+      version: 0.1.5
+    description: Helm chart to deploy Vault to an OpenShift Cluster
+    digest: 1838699d587680a583d3c4abd92c2a7a2b6693eaf5aa2d5f78a7fed4a34cb0d1
+    name: vault
+    type: application
+    urls:
+    - https://github.com/hybrid-cloud-patterns/validated-patterns-charts/releases/download/vault-0.0.14/vault-0.0.14.tgz
+    version: 0.0.14
+  - apiVersion: v2
+    appVersion: 1.0.0
     created: "2022-12-06T22:16:16.833894872Z"
     dependencies:
     - condition: vault.enabled
@@ -68,4 +91,4 @@ entries:
     urls:
     - https://github.com/hybrid-cloud-patterns/validated-patterns-charts/releases/download/vault-0.0.13/vault-0.0.13.tgz
     version: 0.0.13
-generated: "2022-12-06T22:22:48.074828744Z"
+generated: "2022-12-06T23:45:34.762018402Z"
