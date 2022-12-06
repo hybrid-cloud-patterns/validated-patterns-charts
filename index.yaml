@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  rollouts:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2022-12-06T22:14:03.343580217Z"
+    description: A Helm chart for Kubernetes
+    digest: b2977e5a534a2111af9b91784f12d95b777d060dc057912ec2b3062c4ddafd47
+    name: rollouts
+    type: application
+    urls:
+    - https://github.com/hybrid-cloud-patterns/validated-patterns-charts/releases/download/rollouts-0.1.1/rollouts-0.1.1.tgz
+    version: 0.1.1
+generated: "2022-12-06T22:14:03.343586718Z"
