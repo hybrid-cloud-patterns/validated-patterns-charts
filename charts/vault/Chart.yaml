@@ -4,6 +4,9 @@ description: Helm chart to deploy Vault to an OpenShift Cluster
 type: application
 version: 0.0.15
 appVersion: "1.0.0"
+maintainers: # (optional)
+  - name: claudiol
+    email: claudiol@redhat.com
 dependencies:
   - name: vault
     version: v0.21.0
