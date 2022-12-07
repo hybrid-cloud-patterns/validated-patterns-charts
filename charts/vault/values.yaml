@@ -1,24 +1,18 @@
-
 # Hashicorp Vault Helm Chart
 global:
   tlsDisable: false
   openshift: true
-
 vault:
   enabled: true
-
   ui:
     enabled: true
-
   server:
     extraEnvironmentVars:
       VAULT_CAPATH: /var/run/secrets/kubernetes.io/serviceaccount/service-ca.crt
       VAULT_ADDR: https://vault-internal.hashicorp.svc.cluster.local:8200
-
     route:
       enabled: true
       host: null
-
     standalone:
       enabled: true
       config: |
@@ -34,16 +28,13 @@ vault:
         }
     ha:
       enabled: false
-
     extraVolumes:
     - type: secret
       name: vault-secret
-
     service:
       enabled: true
       annotations:
         service.beta.openshift.io/serving-cert-secret-name: vault-secret
-
 # OpenShift Client
 vault-bootstrap:
   enabled: True
