@@ -27,13 +27,13 @@ jobs:
       - name: Run chart-testing (list-changed)
         id: list-changed
         run: |
-          changed=$(ct list-changed --target-branch ${{ github.event.repository.github.head_ref }})
+          changed=$(ct list-changed --target-branch main
           if [[ -n "$changed" ]]; then
             echo "::set-output name=changed::true"
           fi
 
       - name: Run chart-testing (lint)
-        run: ct lint --target-branch ${{ github.event.repository.github.ref }}
+        run: ct lint --target-branch main
 
       - name: Create kind cluster
         uses: helm/kind-action@v1.4.0
