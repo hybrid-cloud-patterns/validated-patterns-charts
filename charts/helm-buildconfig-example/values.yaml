@@ -1,0 +1,13 @@
+# Default values for helm-buildconfig-example.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+buildconfig:
+  example:
+    name: cli-tools
+    namespace: buildconfig-example
+    git:
+      uri: https://github.com/hybrid-cloud-patterns/s2i-cli-tools
+      ref: main
+    contextDir: containerfiles
+  createNamespace: true

@@ -1,0 +1,15 @@
+﻿apiVersion: image.openshift.io/v1
+kind: ImageStream
+metadata:
+  name: {{ .Values.buildconfig.example.name }}
+  namespace: {{ .Values.buildconfig.example.namespace }}
+spec:
+  lookupPolicy:
+    local: false
+  tags:
+  - name: latest
+    from:
+      kind: DockerImage
+      name: image-registry.openshift-image-registry.svc:5000/openshift/cli
+    referencePolicy:
+      type: Source

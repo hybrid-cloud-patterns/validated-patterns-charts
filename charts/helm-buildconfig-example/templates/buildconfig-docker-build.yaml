@@ -1,0 +1,28 @@
+﻿apiVersion: build.openshift.io/v1
+kind: BuildConfig
+metadata:
+  name: {{ .Values.buildconfig.example.name }}
+  namespace: {{ .Values.buildconfig.example.name }}
+  labels:
+    app: cli-tools
+spec:
+  source:
+    type: Git
+    git:
+      uri: {{ .Values.buildconfig.example.git.uri }} 
+      ref: {{ .Values.buildconfig.example.git.ref }}
+    contextDir: {{ .Values.buildconfig.example.contextDir }}
+  strategy:
+    type: Docker                      
+    dockerStrategy:
+      dockerfilePath: Dockerfile
+      from:
+        kind: ImageStreamTag  
+        namespace: openshift
+        name: cli:latest
+  output:
+    to:
+      kind: ImageStreamTag
+      name: cli-tools:latest
+  triggers:
+  - type: ImageChange
