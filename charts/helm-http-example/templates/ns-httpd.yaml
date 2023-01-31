@@ -1,0 +1,11 @@
+{{- if .Values.createNamespace }}
+apiVersion: v1
+kind: Namespace
+metadata:
+  labels:
+    kubernetes.io/metadata.name: helm-http-example
+  name: helm-http-example
+spec:
+  finalizers:
+  - kubernetes
+{{- end }}
