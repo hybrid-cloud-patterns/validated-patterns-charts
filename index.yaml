@@ -11,6 +11,20 @@ entries:
     urls:
     - https://github.com/hybrid-cloud-patterns/validated-patterns-charts/releases/download/bluegreen-0.1.0/bluegreen-0.1.0.tgz
     version: 0.1.0
+  helm-buildconfig-example:
+  - apiVersion: v2
+    appVersion: 0.1.0
+    created: "2023-01-31T22:40:49.101484463Z"
+    description: A Helm chart for Kubernetes
+    digest: 8f4e4a483e96092034ddeeb2630b190b9d96b0996004d2691e75b9ed89f489d5
+    maintainers:
+    - email: claudiol@redhat.com
+      name: claudiol
+    name: helm-buildconfig-example
+    type: application
+    urls:
+    - https://github.com/hybrid-cloud-patterns/validated-patterns-charts/releases/download/helm-buildconfig-example-0.1.0/helm-buildconfig-example-0.1.0.tgz
+    version: 0.1.0
   helm-http-example:
   - apiVersion: v2
     created: "2023-01-31T18:19:04.891940872Z"
@@ -144,4 +158,4 @@ entries:
     urls:
     - https://github.com/hybrid-cloud-patterns/validated-patterns-charts/releases/download/vault-0.0.13/vault-0.0.13.tgz
     version: 0.0.13
-generated: "2023-01-31T18:19:04.891960372Z"
+generated: "2023-01-31T22:40:49.101496564Z"
