@@ -13,6 +13,19 @@ entries:
     version: 0.1.0
   helm-http-example:
   - apiVersion: v2
+    created: "2023-01-31T18:19:04.891940872Z"
+    description: Http Helm Chart
+    digest: 59599b82e236faf8174478026f2fa0b0596515c0f098a726797ce0714a512876
+    keywords:
+    - pattern
+    maintainers:
+    - email: claudiol@redhat.com
+      name: claudiol
+    name: helm-http-example
+    urls:
+    - https://github.com/hybrid-cloud-patterns/validated-patterns-charts/releases/download/helm-http-example-0.0.2/helm-http-example-0.0.2.tgz
+    version: 0.0.2
+  - apiVersion: v2
     created: "2023-01-31T15:48:12.481387034Z"
     description: Http Helm Chart
     digest: 0c929eafaba0e448418c71d48bb97363a84efe82e9f92241ab3449f2c60323c0
@@ -131,4 +144,4 @@ entries:
     urls:
     - https://github.com/hybrid-cloud-patterns/validated-patterns-charts/releases/download/vault-0.0.13/vault-0.0.13.tgz
     version: 0.0.13
-generated: "2023-01-31T15:48:12.481396434Z"
+generated: "2023-01-31T18:19:04.891960372Z"
