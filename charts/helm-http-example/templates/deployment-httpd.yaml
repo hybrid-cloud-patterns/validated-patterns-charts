@@ -1,0 +1,95 @@
+#---
+#apiVersion: v1
+#kind: PersistentVolumeClaim
+#metadata:
+#  name: httpd-pv-claim
+#  labels:
+#    app: httpd-frontend
+#spec:
+#  accessModes:
+#    - ReadWriteOnce
+#  resources:
+#    requests:
+#      storage: 10Gi
+---
+apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2
+kind: Deployment
+metadata:
+  name: httpd-frontend
+  namespace: helm-http-example
+  labels:
+    app: httpd-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: httpd-frontend
+#  strategy:
+#    type: RollingUpdate
+#    rollingParams:
+#      updatePeriodSeconds: 1 
+#      intervalSeconds: 1 
+#      timeoutSeconds: 120 
+#      maxSurge: "20%" 
+#      maxUnavailable: "10%" 
+#      pre: {} 
+#      post: {}
+  template:
+    metadata:
+      labels:
+        app: httpd-frontend
+    spec:
+        
+      containers:
+      - image: registry.redhat.io/rhel8/httpd-24
+        imagePullPolicy: Always
+        name: httpd-rhel7
+        ports:
+        - containerPort: 8080
+          name: http-port
+        - containerPort: 8443
+          name: https-port
+        volumeMounts:
+        - mountPath: /var/www/html
+          name: configmap-http
+        livenessProbe:
+          httpGet:
+            path: /index.html
+            port: 8080
+            scheme: HTTP
+          initialDelaySeconds: 5
+          timeoutSeconds: 1
+          periodSeconds: 10
+          successThreshold: 1
+          failureThreshold: 3
+        readinessProbe:
+          httpGet:
+            path: /index.html
+            port: 8080
+            scheme: HTTP
+          initialDelaySeconds: 5
+          timeoutSeconds: 1
+          periodSeconds: 10
+          successThreshold: 1
+          failureThreshold: 3
+        securityContext:
+          allowPrivilegeEscalation: false
+          runAsNonRoot: true
+          seccompProfile:
+            type: "RuntimeDefault"
+          capabilities:
+            drop:
+            - ALL
+      #### ontainer "httpd-rhel7" must set securityContext.allowPrivilegeEscalation=false), unrestricted capabilities (container "httpd-rhel7" must set securityContext.capabilities.drop=["ALL"]), runAsNonRoot != true (pod or container "httpd-rhel7" must set securityContext.runAsNonRoot=true), seccompProfile (pod or container "httpd-rhel7" must set securityContext.seccompProfile.type to "RuntimeDefault" or "Localhost"
+      volumes:
+      - name: configmap-http
+        configMap:
+          defaultMode: 438
+          name: configmap-http
+#        volumeMounts:
+#        - name: httpd-persistent-storage
+#          mountPath: /home/httpd-server
+#      volumes:
+#      - name: httpd-persistent-storage
+#        persistentVolumeClaim:
+#          claimName: httpd-pv-claim

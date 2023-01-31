@@ -1,0 +1,24 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: configmap-http
+  namespace: helm-http-example
+  labels:
+    app.kubernetes.io/instance: helm-example
+data:
+  "index.html": |-
+    <!DOCTYPE html>
+      <html lang="en">
+        <head>
+          <meta charset="utf-8">
+            <title>Config Demo</title>
+        </head>
+          <body>
+            <center>
+            <h1>
+            Welcome to the Helm example!<br>
+            Pod is running on Local Cluster Domain [ {{ .Values.global.localClusterDomain }} ] <br>
+            </h1>
+            </center>
+          </body>
+      </html>

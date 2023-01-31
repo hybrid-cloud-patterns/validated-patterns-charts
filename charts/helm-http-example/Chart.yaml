@@ -1,0 +1,9 @@
+apiVersion: v2
+description: Http Helm Chart
+keywords:
+- pattern
+name: helm-http-example
+version: 0.0.1
+maintainers:
+  - name: claudiol
+    email: claudiol@redhat.com
