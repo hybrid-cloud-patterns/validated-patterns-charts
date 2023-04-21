@@ -6,7 +6,7 @@ This repository contains [Helm](https://helm.sh) charts intended to be use in Va
 
 Add the Repository to Helm:
 
-    helm repo add validated-patterns-charts https://hybrid-cloud-patterns.github.io/validated-patterns-charts/
+    helm repo add validated-patterns-charts https://charts.hybrid-cloud-patterns.io/
 
 ## How to list available charts
 
