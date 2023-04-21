@@ -1,6 +1,6 @@
 # Validated Patterns Charts Repository
 
-This repository contains [Helm](https://helm.sh) charts intended to be use in [Validated Patterns](https://github.com/hybrid-cloud-patterns).
+This repository contains [Helm](https://helm.sh) charts intended to be use in [Validated Patterns](https://hybrid-cloud-patterns.io).
 The [sources](https://github.com/hybrid-cloud-patterns/validated-patterns-charts) for all charts are available on GitHub.
 
 ## Installing Charts from this Repository
