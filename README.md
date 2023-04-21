@@ -18,7 +18,6 @@ The output should look like this:
 
 ```
 $ helm search repo validated-patterns-charts
-WARNING: Kubernetes configuration file is group-readable. This is insecure. Location: /home/claudiol/work/clusters/us-west-1-workshop-1/auth/kubeconfig
 NAME                                       	CHART VERSION	APP VERSION	DESCRIPTION
 validated-patterns-charts/bluegreen        	0.1.0        	1.16.0     	A Helm chart for Kubernetes
 validated-patterns-charts/helm-http-example	0.0.1        	           	Http Helm Chart
