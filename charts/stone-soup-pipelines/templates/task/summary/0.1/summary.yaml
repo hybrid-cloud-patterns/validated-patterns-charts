@@ -1,0 +1,52 @@
+apiVersion: tekton.dev/v1beta1
+kind: Task
+metadata:
+  labels:
+    app.kubernetes.io/version: "0.1"
+  annotations:
+    tekton.dev/pipelines.minVersion: "0.12.1"
+    tekton.dev/tags: "appstudio, hacbs"
+  name: summary
+spec:
+  description: >-
+    Summary Pipeline Task. Prints PipelineRun information, removes image repository secret used by the PipelineRun.
+  params:
+    - name: pipelinerun-name
+      description: pipeline-run to annotate
+    - name: git-url
+      description: Git URL
+    - name: image-url
+      description: Image URL
+    - name: build-task-status
+      description: State of build task in pipelineRun
+      # Default Succeeded for backward compatibility
+      default: Succeeded
+  steps:
+    - name: appstudio-summary
+      image: registry.redhat.io/openshift4/ose-cli:v4.12@sha256:9f0cdc00b1b1a3c17411e50653253b9f6bb5329ea4fb82ad983790a6dbf2d9ad
+      env:
+        - name: GIT_URL
+          value: $(params.git-url)
+        - name: IMAGE_URL
+          value: $(params.image-url)
+        - name: PIPELINERUN_NAME
+          value: $(params.pipelinerun-name)
+        - name: BUILD_TASK_STATUS
+          value: $(params.build-task-status)
+      script: |
+        #!/usr/bin/env bash
+        echo
+        echo "Build Summary:"
+        echo
+        echo "Build repository: $GIT_URL"
+        if [ "$BUILD_TASK_STATUS" == "Succeeded" ]; then
+          echo "Generated Image is in : $IMAGE_URL"
+        fi
+        echo
+        oc annotate --overwrite pipelinerun $PIPELINERUN_NAME build.appstudio.openshift.io/repo=$GIT_URL
+        if [ "$BUILD_TASK_STATUS" == "Succeeded" ]; then
+          oc annotate --overwrite pipelinerun $PIPELINERUN_NAME build.appstudio.openshift.io/image=$IMAGE_URL
+        fi
+        echo End Summary
+
+        oc delete --ignore-not-found=true secret $PIPELINERUN_NAME
