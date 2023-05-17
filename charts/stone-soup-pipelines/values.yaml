@@ -7,4 +7,3 @@ stoneSoupPipeline:
     install: true
   namespace: stone-soup-ci
   serviceAccount: pipeline
-
