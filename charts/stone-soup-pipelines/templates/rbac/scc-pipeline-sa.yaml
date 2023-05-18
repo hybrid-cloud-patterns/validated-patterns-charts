@@ -1,7 +1,7 @@
 apiVersion: security.openshift.io/v1
 kind: SecurityContextConstraints
 metadata:
-  name: pipeline
+  name: pipeline-sa
   namespace: {{ default "stone-soup-ci" .Values.stoneSoupPipeline.namespace }}
 allowPrivilegedContainer: true
 runAsUser:
