@@ -2,6 +2,11 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: stone-soup-build-artifacts-rwo
+  labels:
+    app.kubernetes.io/managed-by: helm
+  annotations:
+    meta.helm.sh/release-name: stone-soup
+    meta.helm.sh/release-namespace: default
 spec:
   resources:
     requests:

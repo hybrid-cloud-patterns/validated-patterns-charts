@@ -7,3 +7,4 @@ stoneSoupPipeline:
     install: true
   namespace: stone-soup-ci
   serviceAccount: pipeline
+  secret: stone-soup-secret
