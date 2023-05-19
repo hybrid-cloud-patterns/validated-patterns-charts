@@ -7,6 +7,10 @@ kind: Subscription
 metadata:
   name: openshift-pipelines-operator-rh
   namespace: openshift-operators
+  annotations:
+    # This is what defines this resource as a hook. Without this line, the
+    # job is considered part of the release.
+    "helm.sh/hook": pre-install
   labels:
     app.kubernetes.io/managed-by: helm
 spec:
