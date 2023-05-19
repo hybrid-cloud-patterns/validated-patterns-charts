@@ -1,0 +1,20 @@
+{{- if $.Values.stoneSoupPipeline.subscription.install }}
+{{- if .Release.IsInstall }}
+{{- if (lookup "v1" "Subscription" "openshift-pipelines-operator-rh" "") }}
+{{- end }}
+apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
+metadata:
+  name: openshift-pipelines-operator-rh
+  namespace: openshift-operators
+  labels:
+    app.kubernetes.io/managed-by: helm
+spec:
+  name: openshift-pipelines-operator-rh 
+  source: redhat-operators
+  sourceNamespace: openshift-marketplace
+---
+{{- if .Release.IsInstall }}
+{{- end }}
+{{- end }}
+{{- end }}

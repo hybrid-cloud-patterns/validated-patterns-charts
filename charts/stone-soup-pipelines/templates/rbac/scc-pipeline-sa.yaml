@@ -1,9 +1,15 @@
 apiVersion: security.openshift.io/v1
 kind: SecurityContextConstraints
 metadata:
-  name: pipeline-sa
-  namespace: {{ default "stone-soup-ci" .Values.stoneSoupPipeline.namespace }}
+  name: pipeline
 allowPrivilegedContainer: true
+allowHostDirVolumePlugin: true
+allowHostIPC: true
+allowHostIPC: true
+allowHostPID: true
+allowHostPorts: true
+readOnlyRootFilesystem: true
+allowHostNetwork: true
 runAsUser:
   type: RunAsAny
 seLinuxContext:
@@ -13,4 +19,4 @@ fsGroup:
 supplementalGroups:
   type: RunAsAny
 users:
-  - system:serviceaccount:{{ .Values.stoneSoupPipeline.namespace }}:{{ .Values.stoneSoupPipeline.serviceAccount }}
+  - system:serviceaccount:{{ .Release.Namespace }}:{{ .Values.stoneSoupPipeline.serviceAccount }}
