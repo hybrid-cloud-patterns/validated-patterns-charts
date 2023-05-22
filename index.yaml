@@ -88,6 +88,19 @@ entries:
   stone-soup-pipelines:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2023-05-22T20:45:20.622800478Z"
+    description: A Helm chart for Kubernetes
+    digest: a4bd20350d2d6e58b4675013c74676bd65a5a4c5641b89db24a91de710638ee6
+    maintainers:
+    - email: claudiol@redhat.com
+      name: claudiol
+    name: stone-soup-pipelines
+    type: application
+    urls:
+    - https://github.com/hybrid-cloud-patterns/validated-patterns-charts/releases/download/stone-soup-pipelines-0.1.6/stone-soup-pipelines-0.1.6.tgz
+    version: 0.1.6
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2023-05-19T21:00:33.164319282Z"
     description: A Helm chart for Kubernetes
     digest: eaa3d922aa64fe68efe2267eb458b55a0435e40a22c8fe752cb3e9aafe4ce5b7
@@ -237,4 +250,4 @@ entries:
     urls:
     - https://github.com/hybrid-cloud-patterns/validated-patterns-charts/releases/download/vault-0.0.13/vault-0.0.13.tgz
     version: 0.0.13
-generated: "2023-05-19T21:00:33.164389282Z"
+generated: "2023-05-22T20:45:20.622997691Z"
