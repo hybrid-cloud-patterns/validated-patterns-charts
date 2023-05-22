@@ -1,7 +1,3 @@
-{{- if $.Values.stoneSoupPipeline.subscription.install }}
-{{- if .Release.IsInstall }}
-{{- if (lookup "v1" "Subscription" "openshift-pipelines-operator-rh" "") }}
-{{- end }}
 apiVersion: operators.coreos.com/v1alpha1
 kind: Subscription
 metadata:
@@ -18,7 +14,3 @@ spec:
   source: redhat-operators
   sourceNamespace: openshift-marketplace
 ---
-{{- if .Release.IsInstall }}
-{{- end }}
-{{- end }}
-{{- end }}
