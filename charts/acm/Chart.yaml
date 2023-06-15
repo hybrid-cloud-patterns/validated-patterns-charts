@@ -4,3 +4,8 @@ keywords:
 - pattern
 name: acm
 version: 0.0.1
+maintainers:
+  - name: Michele Baldessari
+    email: michele@redhat.com
+  - name: Lester Claudio
+    email: lester@redhat.com
