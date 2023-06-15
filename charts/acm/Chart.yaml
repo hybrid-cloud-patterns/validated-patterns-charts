@@ -5,7 +5,7 @@ keywords:
 name: acm
 version: 0.0.1
 maintainers:
-  - name: Michele Baldessari
+  - name: "Michele Baldessari"
     email: michele@redhat.com
-  - name: Lester Claudio
+  - name: "Lester Claudio"
     email: lester@redhat.com
