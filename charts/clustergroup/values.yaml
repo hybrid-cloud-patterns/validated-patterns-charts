@@ -82,5 +82,5 @@ secretStore:
 
 # Depends on the value of 'vault_hub' ansible variable used
 # during the installation
-#secretsBase:
-#  key: secret/data/hub
+# secretsBase:
+#   key: secret/data/hub
