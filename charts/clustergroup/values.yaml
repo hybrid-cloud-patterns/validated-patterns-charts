@@ -84,4 +84,3 @@ secretStore:
 # during the installation
 #secretsBase:
 #  key: secret/data/hub
-
