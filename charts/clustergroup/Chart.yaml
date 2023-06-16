@@ -3,7 +3,7 @@ description: A Helm chart to create per-clustergroup ArgoCD applications and any
 keywords:
 - pattern
 name: pattern-clustergroup
-version: 0.0.1
+version: 0.0.2
 maintainers:
   - name: michele
     email: michele@redhat.com
