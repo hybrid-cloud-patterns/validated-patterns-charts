@@ -27,6 +27,26 @@ entries:
     urls:
     - https://github.com/hybrid-cloud-patterns/validated-patterns-charts/releases/download/bluegreen-0.1.0/bluegreen-0.1.0.tgz
     version: 0.1.0
+  golang-external-secrets:
+  - apiVersion: v2
+    created: "2023-06-20T16:48:43.616143818Z"
+    dependencies:
+    - name: external-secrets
+      repository: https://charts.external-secrets.io
+      version: 0.8.2
+    description: A Helm chart to configure the golang-based external-secrets
+    digest: cce11c40797ac8332308971a7215dd4663d3d570d182a17e4f039eedbbfd1aa5
+    keywords:
+    - pattern
+    maintainers:
+    - email: michele@redhat.com
+      name: michele
+    - email: claudiol@redhat.com
+      name: claudiol
+    name: golang-external-secrets
+    urls:
+    - https://github.com/hybrid-cloud-patterns/validated-patterns-charts/releases/download/golang-external-secrets-0.0.1/golang-external-secrets-0.0.1.tgz
+    version: 0.0.1
   helm-buildconfig-example:
   - apiVersion: v2
     appVersion: 0.1.0
@@ -299,4 +319,4 @@ entries:
     urls:
     - https://github.com/hybrid-cloud-patterns/validated-patterns-charts/releases/download/vault-0.0.13/vault-0.0.13.tgz
     version: 0.0.13
-generated: "2023-06-16T21:45:01.141613739Z"
+generated: "2023-06-20T16:48:43.616364333Z"
