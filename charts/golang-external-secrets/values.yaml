@@ -10,11 +10,20 @@ clusterGroup:
   isHubCluster: true
 
 external-secrets:
+  securityContext:
+    runAsNonRoot: true
+    runAsUser: null
   image:
     tag: v0.8.3-ubi
   webhook:
+    securityContext:
+      runAsNonRoot: true
+      runAsUser: null
     image:
       tag: v0.8.3-ubi
   certController:
+    securityContext:
+      runAsNonRoot: true
+      runAsUser: null
     image:
       tag: v0.8.3-ubi
