@@ -12,18 +12,18 @@ clusterGroup:
 external-secrets:
   securityContext:
     runAsNonRoot: true
-    runAsUser: ""
+    runAsUser: null
   image:
     tag: v0.8.3-ubi
   webhook:
     securityContext:
       runAsNonRoot: true
-      runAsUser: ""
+      runAsUser: null
     image:
       tag: v0.8.3-ubi
   certController:
     securityContext:
       runAsNonRoot: true
-      runAsUser: ""
+      runAsUser: null
     image:
       tag: v0.8.3-ubi
