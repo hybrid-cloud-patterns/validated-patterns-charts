@@ -1,5 +1,9 @@
 # Changes
 
+## June 28, 2023
+* Refactored the common repository to only include the helm charts
+* Changes are targeted for the validated-patterns-charts repository.
+
 ## May 22, 2023
 
 * Upgraded ESO to 0.8.2
