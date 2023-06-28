@@ -1,22 +1,28 @@
-# Validated Patterns common/ repository
+# Validated Patterns Charts Repository
 
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+This repository contains [Helm](https://helm.sh) charts intended to be use in Validated Patterns.
 
-## Start Here
+## Installing Charts from this Repository
 
-This repository is never used as standalone. It is usually imported in each pattern as a subtree.
-In order to import the common/ the very first time you can use
-`https://github.com/hybrid-cloud-patterns/multicloud-gitops/blob/main/common/scripts/make_common_subtree.sh`
+Add the Repository to Helm:
 
-In order to update your common subtree inside your pattern repository you can either use
-`https://github.com/hybrid-cloud-patterns/utilities/blob/main/scripts/update-common-everywhere.sh` or
-do it manually by doing the following:
+    helm repo add validated-patterns-charts https://charts.hybrid-cloud-patterns.io/
 
-```sh
-git remote add -f upstream-common https://github.com/hybrid-cloud-patterns/common.git
-git merge -s subtree -Xtheirs -Xsubtree=common upstream-common/ha-vault
+## How to list available charts
+
+To list the charts that are available in our report just run the following command once you have added the repository:
+
+    helm search repo validated-patterns-charts 
+
+The output should look like this:
+
 ```
-
-## Secrets
-
-There are two different secret formats parsed by the ansible bits. Both are documented [here](https://github.com/hybrid-cloud-patterns/common/tree/main/ansible/roles/vault_utils/README.md)
+$ helm search repo validated-patterns-charts
+NAME                                       	CHART VERSION	APP VERSION	DESCRIPTION
+validated-patterns-charts/bluegreen        	0.1.0        	1.16.0     	A Helm chart for Kubernetes
+validated-patterns-charts/helm-http-example	0.0.1        	           	Http Helm Chart
+validated-patterns-charts/istio            	0.1.0        	1.16.0     	A Helm chart for Kubernetes
+validated-patterns-charts/rollouts         	0.1.1        	1.16.0     	A Helm chart for Kubernetes
+validated-patterns-charts/servicemesh      	0.1.0        	1.16.0     	A Helm chart for Kubernetes
+validated-patterns-charts/vault            	0.0.15       	1.0.0      	Helm chart to deploy Vault to an OpenShift Cluster
+```
