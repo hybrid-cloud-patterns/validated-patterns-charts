@@ -356,6 +356,36 @@ entries:
     urls:
     - https://github.com/hybrid-cloud-patterns/validated-patterns-charts/releases/download/vault-0.24.2/vault-0.24.2.tgz
     version: 0.24.2
+  - annotations:
+      charts.openshift.io/name: HashiCorp Vault
+    apiVersion: v2
+    appVersion: 1.13.1
+    created: "2023-06-30T21:16:00.890989675Z"
+    description: Official HashiCorp Vault Chart
+    digest: 22f62728ebda4bc3186187b550923181626f74ec524a86fd710af3679395ce83
+    home: https://www.vaultproject.io
+    icon: https://github.com/hashicorp/vault/raw/f22d202cde2018f9455dec755118a9b84586e082/Vault_PrimaryLogo_Black.png
+    keywords:
+    - vault
+    - security
+    - encryption
+    - secrets
+    - management
+    - automation
+    - infrastructure
+    kubeVersion: '>= 1.22.0-0'
+    maintainers:
+    - email: michele@redhat.com
+      name: michele
+    name: vault
+    sources:
+    - https://github.com/hashicorp/vault
+    - https://github.com/hashicorp/vault-helm
+    - https://github.com/hashicorp/vault-k8s
+    - https://github.com/hashicorp/vault-csi-provider
+    urls:
+    - https://github.com/hybrid-cloud-patterns/validated-patterns-charts/releases/download/vault-0.24.0/vault-0.24.0.tgz
+    version: 0.24.0
   - apiVersion: v2
     appVersion: 1.0.0
     created: "2022-12-07T00:56:33.713754836Z"
@@ -428,4 +458,4 @@ entries:
     urls:
     - https://github.com/hybrid-cloud-patterns/validated-patterns-charts/releases/download/vault-0.0.13/vault-0.0.13.tgz
     version: 0.0.13
-generated: "2023-06-30T17:35:21.79276581Z"
+generated: "2023-06-30T21:16:00.891061276Z"
