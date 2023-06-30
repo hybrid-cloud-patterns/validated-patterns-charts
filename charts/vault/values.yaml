@@ -451,7 +451,7 @@ server:
 
     labels: {}
     annotations: {}
-    #host: chart-example.local
+    # host: chart-example.local
     host: null
     # tls will be passed directly to the route's TLS config, which
     # can be used to configure other termination methods that terminate
@@ -692,7 +692,7 @@ server:
 
     # Configures the service type for the main Vault service.  Can be ClusterIP
     # or NodePort.
-    #type: ClusterIP
+    # type: ClusterIP
 
     # Do not wait for pods to be ready
     publishNotReadyAddresses: true
@@ -705,17 +705,17 @@ server:
 
     # If type is set to "NodePort", a specific nodePort value can be configured,
     # will be random if left blank.
-    #nodePort: 30000
+    # nodePort: 30000
 
     # When HA mode is enabled
     # If type is set to "NodePort", a specific nodePort value can be configured,
     # will be random if left blank.
-    #activeNodePort: 30001
+    # activeNodePort: 30001
 
     # When HA mode is enabled
     # If type is set to "NodePort", a specific nodePort value can be configured,
     # will be random if left blank.
-    #standbyNodePort: 30002
+    # standbyNodePort: 30002
 
     # Port on which Vault server is listening
     port: 8200
@@ -797,9 +797,9 @@ server:
         address = "[::]:8200"
         cluster_address = "[::]:8201"
         # Enable unauthenticated metrics access (necessary for Prometheus Operator)
-        #telemetry {
-        #  unauthenticated_metrics_access = "true"
-        #}
+        # telemetry {
+        #   unauthenticated_metrics_access = "true"
+        # }
       }
       storage "file" {
         path = "/vault/data"
@@ -808,18 +808,18 @@ server:
       # Example configuration for using auto-unseal, using Google Cloud KMS. The
       # GKMS keys must already exist, and the cluster must have a service account
       # that is authorized to access GCP KMS.
-      #seal "gcpckms" {
+      # seal "gcpckms" {
       #   project     = "vault-helm-dev"
       #   region      = "global"
       #   key_ring    = "vault-helm-unseal-kr"
       #   crypto_key  = "vault-helm-unseal-key"
-      #}
+      # }
 
       # Example configuration for enabling Prometheus metrics in your config.
-      #telemetry {
-      #  prometheus_retention_time = "30s"
-      #  disable_hostname = true
-      #}
+      # telemetry {
+      #   prometheus_retention_time = "30s"
+      #   disable_hostname = true
+      # }
 
   # Run Vault in "HA" mode. There are no storage requirements unless the audit log
   # persistence is required.  In HA mode Vault will configure itself to use Consul
@@ -863,9 +863,9 @@ server:
           address = "[::]:8200"
           cluster_address = "[::]:8201"
           # Enable unauthenticated metrics access (necessary for Prometheus Operator)
-          #telemetry {
-          #  unauthenticated_metrics_access = "true"
-          #}
+          # telemetry {
+          #   unauthenticated_metrics_access = "true"
+          # }
         }
 
         storage "raft" {
@@ -900,20 +900,20 @@ server:
       # Example configuration for using auto-unseal, using Google Cloud KMS. The
       # GKMS keys must already exist, and the cluster must have a service account
       # that is authorized to access GCP KMS.
-      #seal "gcpckms" {
+      # seal "gcpckms" {
       #   project     = "vault-helm-dev-246514"
       #   region      = "global"
       #   key_ring    = "vault-helm-unseal-kr"
       #   crypto_key  = "vault-helm-unseal-key"
-      #}
+      # }
 
       # Example configuration for enabling Prometheus metrics.
       # If you are using Prometheus Operator you can enable a ServiceMonitor resource below.
       # You may wish to enable unauthenticated metrics in the listener block above.
-      #telemetry {
-      #  prometheus_retention_time = "30s"
-      #  disable_hostname = true
-      #}
+      # telemetry {
+      #   prometheus_retention_time = "30s"
+      #   disable_hostname = true
+      # }
 
     # A disruption budget limits the number of pods of a replicated application
     # that are down simultaneously from voluntary disruptions
@@ -995,7 +995,7 @@ ui:
   # ref: https://kubernetes.io/docs/concepts/services-networking/service/#external-traffic-policy
   externalTrafficPolicy: Cluster
 
-  #loadBalancerSourceRanges:
+  # loadBalancerSourceRanges:
   #   - 10.0.0.0/16
   #   - 1.78.23.3/32
 
@@ -1207,32 +1207,32 @@ serverTelemetry:
     scrapeTimeout: 10s
 
   prometheusRules:
-      # The Prometheus operator *must* be installed before enabling this feature,
-      # if not the chart will fail to install due to missing CustomResourceDefinitions
-      # provided by the operator.
+    # The Prometheus operator *must* be installed before enabling this feature,
+    # if not the chart will fail to install due to missing CustomResourceDefinitions
+    # provided by the operator.
 
-      # Deploy the PrometheusRule custom resource for AlertManager based alerts.
-      # Requires that AlertManager is properly deployed.
-      enabled: false
+    # Deploy the PrometheusRule custom resource for AlertManager based alerts.
+    # Requires that AlertManager is properly deployed.
+    enabled: false
 
-      # Selector labels to add to the PrometheusRules.
-      # When empty, defaults to:
-      #  release: prometheus
-      selectors: {}
+    # Selector labels to add to the PrometheusRules.
+    # When empty, defaults to:
+    #  release: prometheus
+    selectors: {}
 
-      # Some example rules.
-      rules: {}
-      #  - alert: vault-HighResponseTime
-      #    annotations:
-      #      message: The response time of Vault is over 500ms on average over the last 5 minutes.
-      #    expr: vault_core_handle_request{quantile="0.5", namespace="mynamespace"} > 500
-      #    for: 5m
-      #    labels:
-      #      severity: warning
-      #  - alert: vault-HighResponseTime
-      #    annotations:
-      #      message: The response time of Vault is over 1s on average over the last 5 minutes.
-      #    expr: vault_core_handle_request{quantile="0.5", namespace="mynamespace"} > 1000
-      #    for: 5m
-      #    labels:
-      #      severity: critical
+    # Some example rules.
+    rules: {}
+    #  - alert: vault-HighResponseTime
+    #    annotations:
+    #      message: The response time of Vault is over 500ms on average over the last 5 minutes.
+    #    expr: vault_core_handle_request{quantile="0.5", namespace="mynamespace"} > 500
+    #    for: 5m
+    #    labels:
+    #      severity: warning
+    #  - alert: vault-HighResponseTime
+    #    annotations:
+    #      message: The response time of Vault is over 1s on average over the last 5 minutes.
+    #    expr: vault_core_handle_request{quantile="0.5", namespace="mynamespace"} > 1000
+    #    for: 5m
+    #    labels:
+    #      severity: critical
