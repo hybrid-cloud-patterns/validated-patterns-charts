@@ -21,3 +21,6 @@ sources:
 - https://github.com/hashicorp/vault-k8s
 - https://github.com/hashicorp/vault-csi-provider
 version: 0.24.2
+maintainers:
+- email: michele@redhat.com
+  name: michele
