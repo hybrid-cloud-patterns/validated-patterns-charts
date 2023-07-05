@@ -27,6 +27,26 @@ entries:
     urls:
     - https://github.com/hybrid-cloud-patterns/validated-patterns-charts/releases/download/bluegreen-0.1.0/bluegreen-0.1.0.tgz
     version: 0.1.0
+  external-secrets:
+  - apiVersion: v2
+    appVersion: v0.8.3
+    created: "2023-07-05T21:18:46.09155649Z"
+    description: External secret management for Kubernetes
+    digest: 3eead7dc7d97f6e917573c9ca659a54cd70adedc304730790471694286ab23cb
+    home: https://github.com/external-secrets/external-secrets
+    icon: https://raw.githubusercontent.com/external-secrets/external-secrets/main/assets/eso-logo-large.png
+    keywords:
+    - kubernetes-external-secrets
+    - secrets
+    kubeVersion: '>= 1.19.0-0'
+    maintainers:
+    - email: kellinmcavoy@gmail.com
+      name: mcavoyk
+    name: external-secrets
+    type: application
+    urls:
+    - https://github.com/hybrid-cloud-patterns/validated-patterns-charts/releases/download/external-secrets-0.8.3/external-secrets-0.8.3.tgz
+    version: 0.8.3
   golang-external-secrets:
   - apiVersion: v2
     created: "2023-06-23T14:12:18.619357349Z"
@@ -509,4 +529,4 @@ entries:
     urls:
     - https://github.com/hybrid-cloud-patterns/validated-patterns-charts/releases/download/vault-0.0.13/vault-0.0.13.tgz
     version: 0.0.13
-generated: "2023-06-30T21:27:51.90454758Z"
+generated: "2023-07-05T21:18:46.091628891Z"
