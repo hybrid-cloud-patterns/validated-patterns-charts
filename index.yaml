@@ -49,6 +49,25 @@ entries:
     version: 0.8.3
   golang-external-secrets:
   - apiVersion: v2
+    created: "2023-07-06T02:33:28.475810021Z"
+    dependencies:
+    - name: external-secrets
+      repository: file://subcharts/external-secrets
+      version: 0.8.3
+    description: A Helm chart to configure the golang-based external-secrets
+    digest: 7093e64b3b29a2075cc7f8ad97a53b1bcf9f549b9c4fadbf45bf677b4ec313e9
+    keywords:
+    - pattern
+    maintainers:
+    - email: claudiol@redhat.com
+      name: claudiol
+    - email: michele@redhat.com
+      name: michele
+    name: golang-external-secrets
+    urls:
+    - https://github.com/hybrid-cloud-patterns/validated-patterns-charts/releases/download/golang-external-secrets-0.0.6/golang-external-secrets-0.0.6.tgz
+    version: 0.0.6
+  - apiVersion: v2
     created: "2023-07-05T22:13:54.669486356Z"
     dependencies:
     - name: external-secrets
@@ -567,4 +586,4 @@ entries:
     urls:
     - https://github.com/hybrid-cloud-patterns/validated-patterns-charts/releases/download/vault-0.0.13/vault-0.0.13.tgz
     version: 0.0.13
-generated: "2023-07-05T22:13:54.669534156Z"
+generated: "2023-07-06T02:33:28.475881422Z"
