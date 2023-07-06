@@ -164,6 +164,27 @@ entries:
     version: 0.0.1
   hashicorp-vault:
   - apiVersion: v2
+    created: "2023-07-06T02:52:41.935119577Z"
+    dependencies:
+    - name: vault
+      repository: file://subcharts/vault/
+      version: 0.24.1
+    description: A Helm chart to configure Hashicorp's vault
+    digest: 6ead84954a0887b453078b7851908196ab20215714af9b3cf52ed76a1bd4d6fd
+    keywords:
+    - pattern
+    maintainers:
+    - email: claudiol@redhat.com
+      name: claudiol
+    - email: michele@redhat.com
+      name: michele
+    - email: kellinmcavoy@gmail.com
+      name: mcavoyk
+    name: hashicorp-vault
+    urls:
+    - https://github.com/hybrid-cloud-patterns/validated-patterns-charts/releases/download/hashicorp-vault-0.0.4/hashicorp-vault-0.0.4.tgz
+    version: 0.0.4
+  - apiVersion: v2
     created: "2023-06-30T21:27:51.90447978Z"
     dependencies:
     - name: vault
@@ -586,4 +607,4 @@ entries:
     urls:
     - https://github.com/hybrid-cloud-patterns/validated-patterns-charts/releases/download/vault-0.0.13/vault-0.0.13.tgz
     version: 0.0.13
-generated: "2023-07-06T02:33:28.475881422Z"
+generated: "2023-07-06T02:52:41.935304782Z"
