@@ -155,8 +155,7 @@ spec:
     {{- if not (.chart) }}
     ref: gitref{{$refcount}}
     {{- end }}
-    {{ $refcount = add1 $refcount }}
-    {{- if and (not .kustomize) (.chart) }}
+    {{- if and (not .kustomize) }}
     helm:
       ignoreMissingValueFiles: true
       valueFiles:
@@ -238,13 +237,9 @@ spec:
       {{- end }}{{- /* END RANGE */}}
       {{- end }} {{- /* END FILEPARAMETERS */}}
     {{- end }} {{- /* IF NOT PLUGIN-ELSE */}}
-
-
-
-
+    {{ $refcount = add1 $refcount }}
   {{- end }}  
   {{- else }}
-  
   source:
     repoURL: {{ coalesce .repoURL $.Values.global.repoURL }}
     targetRevision: {{ coalesce .targetRevision $.Values.global.targetRevision }}
