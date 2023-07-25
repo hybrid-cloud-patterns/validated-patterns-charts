@@ -142,15 +142,19 @@ spec:
 
   {{- if .sources }}
   {{- $refcount := 0 }}
+  {{ $isChart := false }}
   sources:
     {{- range .sources }}
   - repoURL: {{ coalesce .repoURL $.Values.global.repoURL }}
     targetRevision: {{ coalesce .targetRevision $.Values.global.targetRevision }}
     {{- if .chart }}
     chart: {{ .chart }}
+    {{ $isChart = true }}
     {{- else if .path }}
     path: {{ .path }}
+    {{ $isChart = false }}
     {{- else }}
+    {{ $isChart = false }}
     {{- end }}
     {{- if not (.chart) }}
     ref: gitref{{$refcount}}
@@ -237,7 +241,9 @@ spec:
       {{- end }}{{- /* END RANGE */}}
       {{- end }} {{- /* END FILEPARAMETERS */}}
     {{- end }} {{- /* IF NOT PLUGIN-ELSE */}}
+    {{- if not ( $isChart ) }}
     {{ $refcount = add1 $refcount }}
+    {{- end }}
   {{- end }}  
   {{- else }}
   source:
