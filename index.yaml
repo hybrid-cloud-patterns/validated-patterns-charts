@@ -299,6 +299,22 @@ entries:
     version: 0.1.0
   pattern-clustergroup:
   - apiVersion: v2
+    created: "2023-07-25T17:29:07.850861258Z"
+    description: A Helm chart to create per-clustergroup ArgoCD applications and any
+      required namespaces or subscriptions
+    digest: 0dbe3a9bbcd47c5045cdfb7947cf0fc84ac0cc21a9b7d0bdcdae0f12e049769d
+    keywords:
+    - pattern
+    maintainers:
+    - email: michele@redhat.com
+      name: michele
+    - email: claudiol@redhat.com
+      name: claudiol
+    name: pattern-clustergroup
+    urls:
+    - https://github.com/hybrid-cloud-patterns/validated-patterns-charts/releases/download/pattern-clustergroup-0.0.3/pattern-clustergroup-0.0.3.tgz
+    version: 0.0.3
+  - apiVersion: v2
     created: "2023-06-16T21:28:43.82106655Z"
     description: A Helm chart to create per-clustergroup ArgoCD applications and any
       required namespaces or subscriptions
@@ -607,4 +623,4 @@ entries:
     urls:
     - https://github.com/hybrid-cloud-patterns/validated-patterns-charts/releases/download/vault-0.0.13/vault-0.0.13.tgz
     version: 0.0.13
-generated: "2023-07-06T02:52:41.935304782Z"
+generated: "2023-07-25T17:29:07.850917761Z"
