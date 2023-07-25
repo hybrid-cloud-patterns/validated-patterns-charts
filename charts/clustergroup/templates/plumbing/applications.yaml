@@ -141,32 +141,39 @@ spec:
   project: {{ .project }}
 
   {{- if .sources }}
+  {{- $refcount := 0 }}
+  {{ $isChart := false }}
   sources:
-  {{- range .sources }}
+    {{- range .sources }}
   - repoURL: {{ coalesce .repoURL $.Values.global.repoURL }}
     targetRevision: {{ coalesce .targetRevision $.Values.global.targetRevision }}
     {{- if .chart }}
     chart: {{ .chart }}
+    {{ $isChart = true }}
     {{- else if .path }}
     path: {{ .path }}
+    {{ $isChart = false }}
     {{- else }}
-    ref: gitref
+    {{ $isChart = false }}
     {{- end }}
-    {{- if and (not .kustomize) (.chart) }}
+    {{- if not (.chart) }}
+    ref: gitref{{$refcount}}
+    {{- end }}
+    {{- if and (not .kustomize) }}
     helm:
       ignoreMissingValueFiles: true
       valueFiles:
-      - "$gitref/values-global.yaml"
-      - "$gitref/values-{{ $.Values.clusterGroup.name }}.yaml"
+      - "$gitref{{ $refcount }}/values-global.yaml"
+      - "$gitref{{ $refcount }}/values-{{ $.Values.clusterGroup.name }}.yaml"
       {{- if $.Values.global.clusterPlatform }}
-      - "$gitref/values-{{ $.Values.global.clusterPlatform }}.yaml"
+      - "$gitref{{ $refcount }}/values-{{ $.Values.global.clusterPlatform }}.yaml"
         {{- if $.Values.global.clusterVersion }}
-      - "$gitref/values-{{ $.Values.global.clusterPlatform }}-{{ $.Values.global.clusterVersion }}.yaml"
+      - "$gitref{{ $refcount }}/values-{{ $.Values.global.clusterPlatform }}-{{ $.Values.global.clusterVersion }}.yaml"
         {{- end }}
-      - "$gitref/values-{{ $.Values.global.clusterPlatform }}-{{ $.Values.clusterGroup.name }}.yaml"
+      - "$gitref{{ $refcount }}/values-{{ $.Values.global.clusterPlatform }}-{{ $.Values.clusterGroup.name }}.yaml"
       {{- end }}
       {{- if $.Values.global.clusterVersion }}
-      - "$gitref/values-{{ $.Values.global.clusterVersion }}-{{ $.Values.clusterGroup.name }}.yaml"
+      - "$gitref{{ $refcount }}/values-{{ $.Values.global.clusterVersion }}-{{ $.Values.clusterGroup.name }}.yaml"
       {{- end }}
       {{- range $valueFile := .extraValueFiles }}
       - {{ $valueFile | quote }}
@@ -234,13 +241,11 @@ spec:
       {{- end }}{{- /* END RANGE */}}
       {{- end }} {{- /* END FILEPARAMETERS */}}
     {{- end }} {{- /* IF NOT PLUGIN-ELSE */}}
-
-
-
-
+    {{- if not ( $isChart ) }}
+    {{ $refcount = add1 $refcount }}
+    {{- end }}
   {{- end }}  
   {{- else }}
-  
   source:
     repoURL: {{ coalesce .repoURL $.Values.global.repoURL }}
     targetRevision: {{ coalesce .targetRevision $.Values.global.targetRevision }}
